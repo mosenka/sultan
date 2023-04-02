@@ -1,0 +1,22 @@
+@import "breakpoints";
+
+.wrapper {
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+    padding-bottom: 4rem;
+
+    @include desktop {
+        flex-wrap: wrap;
+
+        div {
+            margin-bottom: 20px;
+        }
+    }
+
+    @include tablet {
+        display: none;
+    }
+
+}

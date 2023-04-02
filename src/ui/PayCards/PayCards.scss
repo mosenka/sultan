@@ -1,0 +1,19 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.item {
+    text-align: center;
+
+    &:not(:last-child) {
+        margin-right: 5px;
+    }
+
+}
+
+.img {
+    display: inline-block;
+    width: 60px;
+}

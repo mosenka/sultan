@@ -1,0 +1,25 @@
+@import "breakpoints";
+
+.wrapper {
+    display: none;
+    border-style: solid;
+    border-color: rgba(#3F4E65, 0.2);
+    border-width: 2px 0;
+    justify-content: space-between;
+    align-items: center;
+
+    @include mobile-hr {
+        display: flex;
+    }
+
+}
+
+.item {
+    flex: 1 1 50%;
+    color: var(--color-fiord);
+    text-align: center;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,0 +1,49 @@
+.wrapper {
+    flex: 1 1 100%;
+    text-align: center;
+    padding: 3rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.item {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 50%;
+    background: transparent;
+}
+
+.is-active {
+    background: linear-gradient(90deg, rgba(255, 198, 80, 0.3) 0%, rgba(254, 202, 110, 0.3) 97.25%)
+
+}
+
+.arrow {
+    color: var(--color-golden-tainoi);
+    transition: fill 0.4s;
+    cursor: pointer;
+
+    svg {
+        transition: fill 0.4s;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: var(--color-golden-tainoi-darken);
+    }
+}
+
+.prev {
+    transform: rotate(180deg);
+    margin-right: 35px;
+}
+
+.next {
+    margin-left: 35px;
+}

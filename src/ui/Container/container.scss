@@ -1,0 +1,34 @@
+@import '_breakpoints.scss';
+
+
+.container {
+    position: relative;
+    flex: 1 1 100%;
+    width: 100%;
+    margin: 0 auto;
+    min-width: 320px;
+
+    @include desktop-xl {
+        width: 1370px;
+    }
+
+    @include desktop {
+        width: 1140px;
+    }
+
+    @include laptop {
+        width: 960px;
+
+    }
+    @include tablet {
+        width: 720px;
+    }
+    @include mobile-hr {
+
+        width: 540px;
+    }
+    @include mobile {
+        width: 100%;
+        padding: 0 1rem;
+    }
+}

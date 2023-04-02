@@ -1,0 +1,14 @@
+@import "breakpoints";
+
+.wrapper {
+    display: inline-block;
+    width: 140px;
+    height: auto;
+
+    @include mobile-hr {
+        width: 100px;
+    }
+}
+
+
+

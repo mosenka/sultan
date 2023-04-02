@@ -1,0 +1,35 @@
+.wrapper {
+    position: relative;
+    //    position: absolute;
+    //    right: 0;
+    //    top: calc(50% - 10px);
+}
+
+.head {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    min-width: 250px;
+
+}
+
+.list {
+    margin-top: 10px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--color-white);
+    z-index: 9;
+    box-shadow: 0 0 20px 0 rgba(43, 28, 1, 0.3);
+    //padding: 1rem;
+    border-radius: 10px;
+    opacity: 1;
+    transition: opacity .4s;
+
+    * {
+        padding: 15px 20px;
+        cursor: pointer;
+    }
+}
+

@@ -1,0 +1,21 @@
+@import "breakpoints";
+
+.inner {
+    display: flex;
+    padding-top: 25px;
+
+    @include tablet {
+        max-width: 290px;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+}
+
+.mobSorting {
+    display: none;
+
+    @include tablet {
+        display: block;
+    }
+}

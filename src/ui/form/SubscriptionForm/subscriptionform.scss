@@ -1,0 +1,53 @@
+@import "vars";
+
+.wrapper {
+    position: relative;
+    min-width: 250px;
+
+}
+
+.input {
+    width: 100%;
+    outline: none;
+    background: var(--color-gallery);
+    border: 1px solid var(--color-gallery);
+    padding: 2rem;
+    border-radius: 36px;
+    font-family: $font-family-inter;
+    font-size: 1.3rem;
+    opacity: 1;
+    transition: border-color 0.4s;
+
+    &::placeholder {
+        color: var(--color-shuttle-gray);
+        opacity: 0.6;
+    }
+
+    &:focus {
+        border: 1px solid var(--color-golden-tainoi);
+    }
+}
+
+.button {
+    position: absolute;
+    top: calc(50% - 20px);
+    right: 10px;
+    z-index: 10;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--color-golden-tainoi);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.4s;
+
+
+    &:hover,
+    &:focus,
+    &:active {
+        background: var(--color-golden-tainoi-darken)
+    }
+}
+
+

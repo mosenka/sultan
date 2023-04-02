@@ -1,0 +1,53 @@
+
+.input[type="text"] {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    margin: 0;
+}
+
+.input {
+    width: 100%;
+    //max-width: 150px;
+    outline: none;
+    padding: 10px 30px;
+    background: #EDEDED;
+    color: var(--color-fiord);
+    border: 1px solid #EDEDED;
+    border-radius: 36px;
+
+    &.is-error {
+        border: 1px solid var(--color-red);
+    }
+
+}
+
+.input::placeholder {
+    opacity: 0.6;
+
+}
+
+.field {
+    width: 100%;
+    max-width: 60%;
+    padding-bottom: 1.5rem;
+
+}
+
+.label {
+    display: block;
+    padding-bottom: 1rem;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+textarea.input {
+    min-height: 200px;
+}
+
+.error {
+    color: var(--color-red);
+    padding: 5px;
+    font-weight: 500;
+}

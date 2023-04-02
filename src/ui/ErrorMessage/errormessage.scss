@@ -1,0 +1,17 @@
+.wrapper {
+    color: var(--color-red);
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--color-red);
+    border-radius: 50%;
+}
+
+.text {
+    padding-left: 10px;
+}

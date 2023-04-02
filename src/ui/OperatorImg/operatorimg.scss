@@ -1,0 +1,14 @@
+.wrapper {
+    position: relative;
+}
+
+.indicator {
+    position: absolute;
+    right: 6px;
+    top: 28px;
+    z-index: 9;
+    width: 8px;
+    height: 8px;
+    background: var(--color-malachite);
+    border-radius: 50%;
+}

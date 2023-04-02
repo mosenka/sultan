@@ -1,0 +1,158 @@
+[
+  {
+    "productsId": "p1",
+    "categoriesId": "t6"
+  },
+  {
+    "productsId": "p1",
+    "categoriesId": "t7"
+  },
+  {
+    "productsId": "p2",
+    "categoriesId": "t9"
+  },
+  {
+    "productsId": "p2",
+    "categoriesId": "t7"
+  },
+  {
+    "productsId": "p3",
+    "categoriesId": "t9"
+  },
+  {
+    "productsId": "p3",
+    "categoriesId": "t7"
+  },
+  {
+    "productsId": "p4",
+    "categoriesId": "t1"
+  },
+  {
+    "productsId": "p4",
+    "categoriesId": "t2"
+  },
+  {
+    "productsId": "p4",
+    "categoriesId": "t5"
+  },
+  {
+    "productsId": "p5",
+    "categoriesId": "t1"
+  },
+  {
+    "productsId": "p5",
+    "categoriesId": "t2"
+  },
+  {
+    "productsId": "p6",
+    "categoriesId": "t1"
+  },
+  {
+    "productsId": "p6",
+    "categoriesId": "t2"
+  },
+  {
+    "productsId": "p6",
+    "categoriesId": "t4"
+  },
+  {
+    "productsId": "p7",
+    "categoriesId": "t2"
+  },
+  {
+    "productsId": "p8",
+    "categoriesId": "t3"
+  },
+  {
+    "productsId": "p9",
+    "categoriesId": "t9"
+  },
+  {
+    "productsId": "p10",
+    "categoriesId": "t1"
+  },
+  {
+    "productsId": "p10",
+    "categoriesId": "t5"
+  },
+  {
+    "productsId": "p11",
+    "categoriesId": "t7"
+  },
+  {
+    "productsId": "p11",
+    "categoriesId": "t6"
+  },
+  {
+    "productsId": "p12",
+    "categoriesId": "t6"
+  },
+  {
+    "productsId": "p12",
+    "categoriesId": "t7"
+  },
+  {
+    "productsId": "p13",
+    "categoriesId": "t1"
+  },
+  {
+    "productsId": "p13",
+    "categoriesId": "t2"
+  },
+  {
+    "productsId": "p13",
+    "categoriesId": "t5"
+  },
+  {
+    "productsId": "p13",
+    "categoriesId": "t8"
+  },
+  {
+    "productsId": "p14",
+    "categoriesId": "t9"
+  },
+  {
+    "productsId": "p14",
+    "categoriesId": "t7"
+  },
+  {
+    "productsId": "p15",
+    "categoriesId": "t4"
+  },
+  {
+    "productsId": "p15",
+    "categoriesId": "t5"
+  },
+  {
+    "productsId": "p16",
+    "categoriesId": "t2"
+  },
+  {
+    "productsId": "p16",
+    "categoriesId": "t3"
+  },
+  {
+    "productsId": "p16",
+    "categoriesId": "t4"
+  },
+  {
+    "productsId": "p16",
+    "categoriesId": "t8"
+  },
+  {
+    "productsId": "p17",
+    "categoriesId": "t4"
+  },
+  {
+    "productsId": "p17",
+    "categoriesId": "t5"
+  },
+  {
+    "productsId": "p18",
+    "categoriesId": "t7"
+  },
+  {
+    "productsId": "p18",
+    "categoriesId": "t6"
+  }
+]

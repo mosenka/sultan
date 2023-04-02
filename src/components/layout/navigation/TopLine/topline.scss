@@ -1,0 +1,25 @@
+@import '_breakpoints.scss';
+
+.wrapper {
+    padding: 14px 0;
+
+    @include mobile-hr {
+        padding: 0;
+    }
+}
+
+.inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.address {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    @include tablet {
+        display: none;
+    }
+}

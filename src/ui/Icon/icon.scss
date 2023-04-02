@@ -1,0 +1,47 @@
+.icon {
+    fill: currentColor;
+}
+
+.fill_black {
+    fill: var(--color-black);
+    stroke: none;
+}
+
+.fill_white {
+    fill: var(--color-white);
+    stroke: none;
+}
+
+.fill_grey11 {
+    fill: var(--color-gray11);
+    stroke: none;
+}
+
+.fill_fiord {
+    fill: var(--color-fiord);
+    stroke: none;
+}
+
+.fill_gold {
+    stroke: none;
+    fill: var(--color-golden-tainoi)
+}
+
+.stroke_black {
+    stroke: var(--color-black);
+
+}
+
+.stroke_white {
+    stroke: var(--color-white);
+
+}
+
+.stroke_grey11 {
+    stroke: var(--color-gray11);
+}
+
+.stroke_fiord {
+    stroke: var(--color-fiord);
+    fill: none;
+}

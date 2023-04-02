@@ -1,0 +1,113 @@
+@import "breakpoints";
+
+.wrapper {
+    padding: 50px 0;
+    border-color: rgba(63, 78, 101, 0.3);
+    border-style: dotted;
+    border-width: 2px 0;
+    display: flex;
+    align-items: center;
+
+    @include laptop {
+        flex-wrap: wrap;
+    }
+
+    @include tablet {
+        padding: 25px 0;
+    }
+}
+
+.imgWrapper {
+    width: 280px;
+    height: 220px;
+    padding: 10px 0;
+    text-align: center;
+
+    @include tablet {
+        flex-basis: 100%;
+
+    }
+}
+
+.img {
+    height: 100%;
+    width: auto;
+}
+
+.textWrapper {
+    flex: 1 1 500px;
+    padding: 0 20px;
+
+}
+
+.subtitle {
+    display: block;
+    font-size: 30px;
+    line-height: 36px;
+    font-weight: 700;
+    max-height: 72px;
+    overflow: hidden;
+
+    @include tablet {
+        font-size: 25px;
+    }
+
+    @include mobile-hr {
+        font-size: 20px;
+    }
+}
+
+.buttonsWrapper {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    //text-align: center;
+    @include laptop {
+        padding-top: 3rem;
+        padding-right: 100px;
+    }
+
+    @include tablet {
+        padding-right: 0;
+        justify-content: center;
+    }
+}
+
+.counterWrapper {
+    padding: 0 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include mobile {
+        padding: 0;
+    }
+}
+
+.count {
+    padding: 0 10px;
+    min-width: 30px;
+}
+
+.price {
+    //padding: 0 25px;
+    min-width: 150px;
+
+    @include tablet {
+        text-align: center;
+        min-width: 70px;
+    }
+}
+
+.button {
+    padding-left: 42px;
+
+    @include tablet {
+        padding-left: 20px;
+    }
+
+    @include mobile {
+        padding-left: 10px;
+    }
+}

@@ -1,0 +1,53 @@
+@import "breakpoints";
+
+$color-gold: var (
+        --color-golden-tainoi
+);
+
+.wrapper {
+    //width: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    outline: none;
+    background: var(--color-golden-tainoi);
+    color: var(--color-white);
+    border-radius: 89px;
+    font-weight: 700;
+    transition: all 0.4s;
+    cursor: pointer;
+
+    &:hover,
+    &:focus,
+    &:active {
+        background: var(--color-golden-tainoi-darken)
+    }
+
+}
+
+.big {
+    padding: 21px 40px;
+    font-size: 1.4rem;
+    min-width: 200px;
+
+    @include desktop {
+        min-width: 180px;
+    }
+}
+
+.small {
+    padding: 16px 20px;
+    min-width: 153px;
+
+    @include desktop {
+        min-width: 125px;
+    }
+}
+
+.circle {
+    min-width: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}

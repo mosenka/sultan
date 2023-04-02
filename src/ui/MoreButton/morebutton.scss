@@ -1,0 +1,18 @@
+.wrapper {
+    padding: 15px 0 0 15px;
+    color: var(--color-fiord);
+    cursor: pointer;
+
+}
+
+.icon {
+    svg {
+        transition: transform 0.4s;
+    }
+}
+
+.is-open {
+    svg {
+        transform: rotate(180deg);
+    }
+}

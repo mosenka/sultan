@@ -1,0 +1,21 @@
+.button {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 202, 101, 0.6);
+    color: var(--color-fiord);
+    transform: rotate(90deg);
+    transition: transform 0.4s;
+    cursor: pointer;
+
+    svg {
+        opacity: 1;
+    }
+}
+
+.button.is-open {
+    transform: rotate(-90deg);
+}

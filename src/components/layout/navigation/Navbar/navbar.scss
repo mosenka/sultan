@@ -1,0 +1,59 @@
+@import "breakpoints";
+
+.navbar {
+    width: 100%;
+    border-width: 2px 0;
+    border-color: rgba(#3F4E65, 0.2);
+    border-style: solid;
+
+    @include mobile-hr {
+        border: none;
+    }
+
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 2rem 0;
+
+    @include laptop {
+        justify-content: space-between;
+    }
+}
+
+.inner {
+    display: flex;
+    align-items: center;
+    @include tablet {
+        display: none;
+    }
+}
+
+.call {
+    @include laptop {
+        display: none;
+    }
+}
+
+.search {
+    @include laptop {
+        display: none;
+    }
+}
+
+.catalog {
+    @include mobile-hr {
+        display: none;
+    }
+}
+
+.logo {
+    width: auto;
+
+    @include mobile-hr {
+        flex: 1 1 auto;
+        text-align: center;
+    }
+}

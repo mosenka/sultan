@@ -1,0 +1,139 @@
+@import "breakpoints";
+
+.footer {
+    padding: 71px 0 116px;
+    background: var(--color-fiord);
+    color: var(--color-white);
+
+    @include tablet {
+        padding: 15px 10px;
+    }
+}
+
+
+.inner {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    @include laptop {
+        flex-wrap: wrap;
+    }
+}
+
+.column {
+    &:not(:last-child) {
+        padding-right: 95px;
+
+        @include desktop {
+            padding-right: 50px;
+
+        }
+    }
+
+    @include laptop {
+        &:first-child {
+            flex: 0 1 50%;
+        }
+    }
+
+}
+
+.subtitle {
+    font-weight: 600;
+    font-size: 20px;
+    padding-bottom: 25px;
+}
+
+.link {
+    display: block;
+    padding-bottom: 20px;
+    transition: color 0.4s;
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: var(--color-golden-tainoi)
+    }
+}
+
+.desc {
+    padding: 15px 0;
+    max-width: 320px;
+
+    @include laptop {
+        max-width: 250px;
+    }
+}
+
+.descSubtitle {
+    padding-bottom: 15px;
+}
+
+.form {
+    padding-top: 40px;
+
+    @include laptop {
+        padding-bottom: 40px;
+    }
+}
+
+
+.group {
+    display: flex;
+    padding-right: 95px;
+
+    @include tablet {
+        width: 100%;
+        padding-right: 0;
+    }
+
+}
+
+
+.buttonWrapper {
+    padding-bottom: 20px;
+}
+
+.contactsItem {
+    display: flex;
+    flex-direction: column;
+
+    &:not(:last-child) {
+        margin-bottom: 25px;
+    }
+}
+
+.priceList {
+    @include tablet {
+        display: none;
+    }
+}
+
+.mobSocial {
+    display: none;
+
+
+    @include tablet {
+        padding-top: 55px;
+        display: block;
+    }
+
+    @include mobile {
+        .descSubtitle {
+            max-width: 100px;
+        }
+    }
+}
+
+.mobPriceButton {
+    display: none;
+
+    @include tablet {
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+}

@@ -1,0 +1,29 @@
+@import "vars";
+
+.input {
+    width: 100px;
+    padding: 4px 0;
+    background: linear-gradient(90deg, rgba(255, 198, 80, 0.3) 0%, rgba(254, 202, 110, 0.3) 97.25%);
+    border: 1px solid transparent;
+    outline: none;
+    border-radius: 1000px;
+    text-align: center;
+    font-family: $font-family-inter;
+    font-size: 12px;
+    font-weight: 300;
+
+    &::placeholder {
+        color: var(--color-fiord);
+        opacity: 0.5
+    }
+
+    &:not([disabled]):focus,
+    &:not([disabled]):active {
+        border: 1px solid var(--color-golden-tainoi);
+    }
+
+}
+
+.is-error {
+    border: 1px solid var(--color-red);
+}

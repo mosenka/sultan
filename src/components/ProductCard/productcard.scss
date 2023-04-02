@@ -1,0 +1,40 @@
+.subtitle {
+    margin-bottom: 1.5rem;
+    min-height: 63px;
+}
+
+.wrapper {
+    padding: 20px 30px;
+}
+
+.imgWrapper {
+    position: relative;
+    text-align: center;
+    min-height: 220px;
+    max-height: 220px;
+    height: 220px;
+    margin: 5px;
+}
+
+.img {
+    display: inline-block;
+    height: 100%;
+    width: auto;
+}
+
+.icon {
+    opacity: 0.23;
+    margin-right: 5px;
+}
+
+.list {
+    padding-bottom: 15px;
+}
+
+.footer {
+    min-height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

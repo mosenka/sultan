@@ -1,0 +1,25 @@
+.wrapper {
+    display: flex;
+}
+
+.item {
+    width: 39px;
+    height: 39px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:not(:last-child) {
+        margin-right: 10px;
+    }
+}
+
+.whatsapp {
+    background: #00E676;
+}
+
+.telegram {
+    background: #40b3e0;
+
+}

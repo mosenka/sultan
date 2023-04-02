@@ -1,0 +1,82 @@
+@import "breakpoints";
+
+.dropdownTop {
+    position: absolute;
+    right: 0;
+    top: calc(50% - 10px);
+
+    @include tablet {
+        display: none;
+    }
+}
+
+.dropdownBottom {
+    display: none;
+    width: 100%;
+    max-width: 320px;
+    padding: 3rem 0;
+
+    @include tablet {
+        display: block;
+    }
+}
+
+.desktopTitle {
+    @include tablet {
+        display: none;
+    }
+
+}
+
+
+.title {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: var(--color-gray11);
+    padding-bottom: 1rem;
+    padding-right: 40px;
+}
+
+.tabletTitle {
+    display: none;
+    padding-bottom: 1rem;
+
+    .title {
+        padding-bottom: 0;
+    }
+
+    @include tablet {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.shrinkButton {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 202, 101, 0.6);
+    color: var(--color-fiord);
+    transform: rotate(90deg);
+    transition: transform 0.4s;
+    cursor: pointer;
+
+    svg {
+        opacity: 1;
+    }
+}
+
+.shrinkButton.is-open {
+    transform: rotate(-90deg);
+}
+
+.desktopFilters {
+    @include tablet {
+        display: none;
+    }
+}

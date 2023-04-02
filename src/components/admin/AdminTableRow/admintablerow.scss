@@ -1,0 +1,41 @@
+.table td {
+    padding: 10px;
+}
+
+.cell {
+    padding: 0 10px;
+}
+
+.row:nth-child(odd) {
+    background: white;
+}
+
+.row:nth-child(even) {
+    background: #E8E6D1;
+}
+
+.cellPrice {
+    font-weight: 700;
+    font-size: 16px;
+    min-width: 100px;
+}
+
+.imgCell {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.img {
+    text-align: center;
+    height: 70px;
+    width: auto;
+}
+
+.descCell {
+    cursor: pointer;
+}
+
+.cellButton {
+    vertical-align: middle;
+    padding: 0 1rem;
+}

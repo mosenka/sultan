@@ -1,0 +1,35 @@
+.wrapper {
+    padding-bottom: 100px;
+}
+
+.title {
+    padding: 4rem 0 3rem;
+}
+
+
+.inner {
+    padding-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.submit {
+    flex: 0 1 45%;
+    padding: 15px 0;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--color-white);
+    background: var(--color-golden-tainoi);
+    border-radius: 80px;
+    border: 2px solid var(--color-golden-tainoi);
+    outline: none;
+    cursor: pointer;
+}
+
+
+.error {
+    color: var(--color-red);
+    padding: 5px;
+    font-weight: 500;
+}

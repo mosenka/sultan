@@ -1,0 +1,29 @@
+.card {
+    max-width: 150px;
+    padding: 18px 19px;
+    background: var(--color-white);
+    text-align: center;
+    //box-shadow: 0 15px 70px -11px rgba(43, 28, 1, 0.04);
+    box-shadow: 0 15px 70px -11px rgba(43, 28, 1, 0.1);
+    border-radius: 10px;
+    color: var(--color-fiord);
+    cursor: pointer;
+    transition: all 0.4s;
+
+    &:not(:last-child) {
+        margin-right: 30px;
+    }
+
+    &:not([disabled]):hover,
+    &:not([disabled]):focus,
+    &:not([disabled]):active {
+        box-shadow: 0 0 20px 0 rgba(43, 28, 1, 0.3);
+    }
+
+}
+
+.card.is-active {
+    border: 1px solid var(--color-golden-tainoi);
+}
+
+

@@ -1,0 +1,16 @@
+@import "breakpoints";
+
+.wrapper {
+    display: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--color-golden-tainoi);
+    color: var(--color-white);
+    align-items: center;
+    justify-content: center;
+
+    @include mobile-hr {
+        display: flex;
+    }
+}
