@@ -9,7 +9,7 @@ interface IAdminTableRowProps {
     product: IProduct
     categories: string[]
     deleteItem: (id: string) => void
-    editItem: (id: string) => void
+    editItem: (product: IProduct) => void
 }
 
 export const AdminTableRow: React.FC<IAdminTableRowProps> = ({
@@ -21,7 +21,7 @@ export const AdminTableRow: React.FC<IAdminTableRowProps> = ({
     const { id, img, sizeType, sizeValue, name, price, makers, brand, desc } =
         product
 
-    const [isShortDesc, setIsShrortDesc] = useState(true)
+    const [isShortDesc, setIsShortDesc] = useState(true)
 
     return (
         <tr className={styles.row}>
@@ -41,7 +41,7 @@ export const AdminTableRow: React.FC<IAdminTableRowProps> = ({
             <td className={styles.cell}>{categories.join(',')}</td>
             <td
                 className={classNames(styles.cell, styles.descCell)}
-                onClick={() => setIsShrortDesc(!isShortDesc)}
+                onClick={() => setIsShortDesc(!isShortDesc)}
             >
                 {isShortDesc ? desc.substring(0, 50) : desc}
             </td>
@@ -51,7 +51,7 @@ export const AdminTableRow: React.FC<IAdminTableRowProps> = ({
                 </Button>
             </td>
             <td className={classNames(styles.cell, styles.cellButton)}>
-                <Button size={'circle'} handlerClick={() => editItem(id)}>
+                <Button size={'circle'} handlerClick={() => editItem(product)}>
                     <Icon icon={EIcons.edit} width={20} stroke={EColor.white} />
                 </Button>
             </td>

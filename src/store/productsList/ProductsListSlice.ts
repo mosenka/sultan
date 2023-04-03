@@ -24,13 +24,23 @@ export const productsListSlice = createSlice({
         sortProducts: state => {
             state.isSorted = !state.isSorted
         },
-        getProductsByMakers: (
-            state: IProductsListState,
-            action: PayloadAction<string>
-        ) => {
+        addNewProduct: (state, action: PayloadAction<IProduct>) => {
+            const product = action.payload
+
+            state.productsList.push(product)
+        },
+        deleteProduct: (state, action: PayloadAction<string>) => {
+            const id = action.payload
             state.productsList = state.productsList.filter(
-                item => item.makersId === action.payload
+                product => product.id != id
             )
+        },
+        editProduct: (state, action: PayloadAction<IProduct>) => {
+            state.productsList = state.productsList.map(product => {
+                return product.id === action.payload.id
+                    ? action.payload
+                    : product
+            })
         },
     },
     extraReducers: {
@@ -60,4 +70,5 @@ export const productsListSlice = createSlice({
 
 export default productsListSlice.reducer
 
-export const { getProductsByMakers, sortProducts } = productsListSlice.actions
+export const { sortProducts, addNewProduct, deleteProduct, editProduct } =
+    productsListSlice.actions

@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 import * as React from 'react'
-import styles from './addforminput.scss'
+import styles from './adminforminput.scss'
 
 type TElems = 'input' | 'textarea'
 
@@ -9,12 +9,12 @@ interface IAddFormInputProps {
     title: string
     isError: boolean
     handleChange: (e: React.ChangeEvent<any>) => void
-    value: string
+    value: number | string
     errorText?: string
     As?: TElems
 }
 
-export const AddFormInput: React.FC<IAddFormInputProps> = ({
+export const AdminFormInput: React.FC<IAddFormInputProps> = ({
     name,
     title,
     isError,

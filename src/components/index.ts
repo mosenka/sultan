@@ -1,3 +1,4 @@
+import { AdminFormInput } from '@components/admin/AdminFormInput/AdminFormInput'
 import { AdminTableRow } from '@components/admin/AdminTableRow/AdminTableRow'
 import { CartButton } from '@components/cart/CartButton/CartButton'
 import { Counter } from '@components/Counter/Counter'
@@ -10,6 +11,7 @@ import { CartProductItem } from './cart/CartProductItem/CartProductItem'
 import { Basket } from './cart/Basket/Basket'
 
 export {
+    AdminFormInput,
     AdminTableRow,
     Layout,
     Sidebar,

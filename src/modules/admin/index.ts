@@ -1,4 +1,4 @@
-import { AddForm } from '@modules/admin/AddForm/AddForm'
+import { AdminForm } from '@modules/admin/AdminForm/AdminForm'
 import { AdminContainer } from './AdminContainer/AdminContainer'
 
-export { AdminContainer, AddForm }
+export { AdminContainer, AdminForm }
