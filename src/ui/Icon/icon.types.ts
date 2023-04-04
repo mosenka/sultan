@@ -17,6 +17,6 @@ export interface IIconProps {
     icon: EIcons
     width: number | string
     height?: number | string
-    fill?: EColor
-    stroke?: EColor
+    fill?: EColor | 'none'
+    stroke?: EColor | 'none'
 }

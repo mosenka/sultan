@@ -3,13 +3,9 @@ import axios from 'axios'
 
 import { IUser } from '@/models'
 
-interface FieldsState {
+export interface FieldsState {
     login: string
     password: string
-}
-
-interface ILogin extends IUser {
-    isAuth: boolean
 }
 
 export const login = createAsyncThunk<boolean, FieldsState>(

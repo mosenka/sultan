@@ -1,7 +1,5 @@
 import * as React from 'react'
 
-import styles from 'components/layout/navigation/TopLine/topline.scss'
-
 import { Menu } from '../Menu/Menu'
 
 import {
@@ -12,6 +10,7 @@ import {
     EIcons,
     Icon,
 } from '@/ui'
+import styles from 'components/layout/navigation/TopLine/topline.scss'
 
 export const TopLine: React.FC = () => {
     return (

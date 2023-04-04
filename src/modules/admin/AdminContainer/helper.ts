@@ -4,11 +4,11 @@ export function getCategoryNameById(
     arr: string[],
     categories: ICategory[]
 ): string[] {
-    let result: string[] = []
+    const result: string[] = []
 
     arr.forEach(item => {
-        let category = categories.find(category => category.id === item)
-        if (!category) return
+        const category = categories.find(category => category.id === item)
+        if (category == null) return
         result.push(category?.name)
     })
 

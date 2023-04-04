@@ -2,10 +2,10 @@ import * as React from 'react'
 import { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 
-import { useAppDispatch, useAppSelector } from '@/hooks'
 import { fetchProductById } from '@/api/ProductService'
-import { ErrorMessage, LoadingSpinner } from '@/ui'
 import { Product } from '@/components'
+import { useAppDispatch, useAppSelector } from '@/hooks'
+import { ErrorMessage, LoadingSpinner } from '@/ui'
 
 export const ProductContainer: React.FC = () => {
     const { isLoading, product, error } = useAppSelector(
@@ -16,9 +16,10 @@ export const ProductContainer: React.FC = () => {
     const dispatch = useAppDispatch()
 
     useEffect(() => {
-        if (id) {
-            dispatch(fetchProductById(id))
-        }
+        if (!id) return
+        if (id.length === 0) return
+
+        dispatch(fetchProductById(id))
     }, [id])
 
     if (isLoading) {

@@ -10,7 +10,7 @@ interface ISidebarProps {
 export const Sidebar: React.FC<ISidebarProps> = ({ children, title }) => {
     return (
         <div className={styles.sidebar}>
-            {/*<h3 className={styles.title}>{title}</h3>*/}
+            {/* <h3 className={styles.title}>{title}</h3> */}
             {children}
         </div>
     )

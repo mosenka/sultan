@@ -1,15 +1,18 @@
-import { IAddProductFormValues } from '@modules/admin/AdminForm/AdminForm'
 import { FormikErrors } from 'formik'
 
-export const validate = (values: IAddProductFormValues) => {
-    let errors: FormikErrors<IAddProductFormValues> = {}
-    if (!values.name) {
+import { IAddProductFormValues } from '@modules/admin/AdminForm/AdminForm'
+
+export const validate = (
+    values: IAddProductFormValues
+): FormikErrors<IAddProductFormValues> => {
+    const errors: FormikErrors<IAddProductFormValues> = {}
+    if (values.name.length === 0) {
         errors.name = 'Обязательное поле'
     }
     if (values.name.length < 5) {
         errors.name = 'Минимальное количество символов 4'
     }
-    if (!values.desc) {
+    if (values.desc.length === 0) {
         errors.desc = 'Обязательное поле'
     }
     if (!values.price) {
@@ -19,15 +22,15 @@ export const validate = (values: IAddProductFormValues) => {
         errors.price = 'Введите число'
     }
 
-    if (!values.brand) {
+    if (values.brand.length === 0) {
         errors.brand = 'Обязательное поле'
     }
 
-    if (!values.sizeValue) {
+    if (values.sizeValue.length === 0) {
         errors.sizeValue = 'Обязательное поле'
     }
 
-    if (!values.desc) {
+    if (values.desc.length === 0) {
         errors.desc = 'Обязательное поле'
     }
 
@@ -35,7 +38,7 @@ export const validate = (values: IAddProductFormValues) => {
         errors.desc = 'Минимальное количество символов 4'
     }
 
-    if (!values.makersId) {
+    if (values.makersId.length === 0) {
         errors.makersId = 'Обязательное поле'
     }
 

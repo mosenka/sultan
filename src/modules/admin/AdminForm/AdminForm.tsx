@@ -1,19 +1,21 @@
+import { useFormik } from 'formik'
+import { useEffect } from 'react'
+
+import * as React from 'react'
+import { v4 as uuidv4 } from 'uuid'
+
+import { validate } from './validate'
+
 import { fetchMakers } from '@/api'
+import { AdminFormInput } from '@/components'
 import { useAppDispatch, useAppSelector } from '@/hooks'
 import { Text } from '@/ui'
-import { useEffect } from 'react'
-import { v4 as uuidv4 } from 'uuid'
-import { AdminFormInput } from '@/components'
+
 import { IProduct, TSizeType } from '@models/IProduct'
+import styles from '@modules/admin/AdminForm/adminform.scss'
 import { CategogiesFormGroup } from '@modules/admin/CategogiesFormGroup/CategogiesFormGroup'
 import { SelectMakers } from '@modules/admin/SelectMakers/SelectMakers'
 import { SelectSizeType } from '@modules/admin/SelectSizeType/SelectSizeType'
-import { validate } from './validate'
-
-import { useFormik } from 'formik'
-
-import * as React from 'react'
-import styles from '@modules/admin/AdminForm/adminform.scss'
 
 export interface IAddProductFormValues {
     name: string
@@ -34,7 +36,7 @@ interface IAdminFormProps extends IAddProductFormValues {
 }
 
 export const AdminForm: React.FC<IAdminFormProps> = ({
-    id = null,
+    id,
     name,
     price,
     sizeValue,
@@ -45,46 +47,42 @@ export const AdminForm: React.FC<IAdminFormProps> = ({
     categoriesId,
     onSave,
     title,
-    img = null,
+    img,
 }) => {
     const { makersList } = useAppSelector(state => state.makersReducer)
     const dispatch = useAppDispatch()
 
     useEffect(() => {
-        if (makersList.length != 0) return
+        if (makersList.length !== 0) return
 
         dispatch(fetchMakers())
     }, [])
 
     const formik = useFormik({
         initialValues: {
-            name: name,
-            price: price,
-            desc: desc,
-            sizeType: sizeType,
-            sizeValue: sizeValue,
-            brand: brand,
-            makersId: makersId,
+            name,
+            price,
+            desc,
+            sizeType,
+            sizeValue,
+            brand,
+            makersId,
             categoriesId: [...categoriesId],
         },
         validate,
         onSubmit: values => {
-            const newImg = img ? img : 'img3.png'
-            const newId = id ? id : uuidv4()
+            const newImg = img ?? 'img3.png'
+            const newId = id ?? uuidv4()
 
-            if (makersList) {
-                const maker = makersList.find(
-                    item => item.id === values.makersId
-                )
-                if (maker) {
-                    onSave({
-                        ...values,
-                        img: newImg,
-                        id: newId,
-                        makers: maker,
-                    })
-                    formik.resetForm()
-                }
+            const maker = makersList?.find(item => item.id === values.makersId)
+            if (maker != null) {
+                onSave({
+                    ...values,
+                    img: newImg,
+                    id: newId,
+                    makers: maker,
+                })
+                formik.resetForm()
             }
         },
     })

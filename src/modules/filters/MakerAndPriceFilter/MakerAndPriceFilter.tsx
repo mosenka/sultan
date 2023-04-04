@@ -3,7 +3,7 @@ import * as React from 'react'
 import styles from './filtersstyle.scss'
 
 import { useAppDispatch } from '@/hooks'
-import { MakerFilter, PriceFilter, SortingSelect } from '@/modules'
+import { MakerFilter, PriceFilter } from '@/modules'
 import { Break, Button } from '@/ui'
 import { resetSelectedMakers } from '@store/makers/MakersSlice'
 import { resetPrices } from '@store/price/PriceSlice'

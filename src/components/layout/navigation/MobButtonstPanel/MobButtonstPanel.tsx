@@ -1,10 +1,10 @@
-import { Break, DotsSeparator, EColor, EIcons, Icon, Text } from '@/ui'
 import * as React from 'react'
+
 import styles from './mobbuttonstpanel.scss'
 
-interface IMobButtonstPanelProps {}
+import { Break, DotsSeparator, EColor, EIcons, Icon, Text } from '@/ui'
 
-export const MobButtonstPanel: React.FC<IMobButtonstPanelProps> = ({}) => {
+export const MobButtonstPanel: React.FC = () => {
     return (
         <div className={styles.wrapper}>
             <p className={styles.item}>

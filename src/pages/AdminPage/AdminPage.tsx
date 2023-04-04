@@ -1,13 +1,13 @@
 import * as React from 'react'
+
+import { Navigate } from 'react-router-dom'
+
 import styles from './adminpage.scss'
 
 import { useAppSelector } from '@/hooks'
 import { AdminContainer } from '@/modules'
-import { Navigate } from 'react-router-dom'
 
-interface IAdminPageProps {}
-
-export const AdminPage: React.FC<IAdminPageProps> = ({}) => {
+export const AdminPage: React.FC = () => {
     const { isAuth } = useAppSelector(state => state.loginReducer)
 
     if (!isAuth) {

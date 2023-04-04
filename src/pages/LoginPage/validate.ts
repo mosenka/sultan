@@ -1,14 +1,17 @@
-import { ILoginFormValues } from '@pages/LoginPage/LoginPage'
 import { FormikErrors } from 'formik'
 
-export const validate = (values: ILoginFormValues) => {
-    let errors: FormikErrors<ILoginFormValues> = {}
-    if (!values.userName) {
+import { ILoginFormValues } from '@pages/LoginPage/LoginPage'
+
+export const validate = (
+    values: ILoginFormValues
+): FormikErrors<ILoginFormValues> => {
+    const errors: FormikErrors<ILoginFormValues> = {}
+    if (values.userName.length === 0) {
         errors.userName = 'Обязательное поле'
     }
 
-    if (!values.password) {
-        errors.password = 'Обязательное'
+    if (values.password.length === 0) {
+        errors.password = 'Обязательное поле'
     }
 
     return errors

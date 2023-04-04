@@ -1,9 +1,8 @@
-import { fetchMakers } from '@/api'
-import { useAppDispatch, useAppSelector } from '@/hooks'
-import { IMakersListItem } from '@store/makers/MakersSlice'
-import { useEffect } from 'react'
 import * as React from 'react'
+
 import styles from './select.scss'
+
+import { IMakersListItem } from '@store/makers/MakersSlice'
 
 interface ISelectProps {
     isError: boolean
@@ -20,7 +19,7 @@ export const SelectMakers: React.FC<ISelectProps> = ({
     makersList,
     value,
 }) => {
-    let options = makersList?.map(maker => {
+    const options = makersList?.map(maker => {
         return (
             <option key={maker.id} value={maker.id}>
                 {maker.name}

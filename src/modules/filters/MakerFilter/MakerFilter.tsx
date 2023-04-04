@@ -1,12 +1,8 @@
 import * as React from 'react'
-import { useEffect, useMemo, useState } from 'react'
-
-import * as queryString from 'querystring'
+import { useEffect, useState } from 'react'
 
 import { fetchMakers } from '@/api/MakersService'
 import { useAppDispatch, useAppSelector, useSearchMakers } from '@/hooks'
-
-import { IMaker } from '@/models/IMaker'
 
 import {
     Break,
@@ -19,9 +15,7 @@ import {
 } from '@/ui'
 import { IMakersListItem, selectMaker } from '@store/makers/MakersSlice'
 
-interface IMakerFilterProps {}
-
-export const MakerFilter: React.FC<IMakerFilterProps> = ({}) => {
+export const MakerFilter: React.FC = () => {
     const { isLoading, makersList, error } = useAppSelector(
         state => state.makersReducer
     )
@@ -36,7 +30,8 @@ export const MakerFilter: React.FC<IMakerFilterProps> = ({}) => {
     }, [])
 
     useEffect(() => {
-        if (!makersList) return
+        if (makersList.length === 0) return
+
         setMakers(makersList)
     }, [makersList])
 
@@ -44,13 +39,15 @@ export const MakerFilter: React.FC<IMakerFilterProps> = ({}) => {
 
     const searchInputChangeHandler = (
         event: React.SyntheticEvent<EventTarget, Event>
-    ) => {
+    ): void => {
         const target = event.target as HTMLInputElement
 
         setSearchQuery(target.value)
     }
 
-    const checkboxInputHandler = (event: React.FormEvent<HTMLInputElement>) => {
+    const checkboxInputHandler = (
+        event: React.FormEvent<HTMLInputElement>
+    ): void => {
         const target = event.target as HTMLInputElement
 
         dispatch(selectMaker(target.value))
@@ -59,7 +56,7 @@ export const MakerFilter: React.FC<IMakerFilterProps> = ({}) => {
     if (isLoading) {
         return <LoadingSpinner />
     }
-    if (error) {
+    if (error.length > 0) {
         return <ErrorMessage text={error} />
     }
 

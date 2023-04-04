@@ -1,4 +1,9 @@
-import { useAppSelector } from '@/hooks'
+import axios from 'axios'
+
+import React from 'react'
+import { createBrowserRouter, Link } from 'react-router-dom'
+
+import { Layout } from '@/components'
 import { IProduct } from '@/models'
 import {
     AdminPage,
@@ -7,17 +12,6 @@ import {
     LoginPage,
     ProductPage,
 } from '@/pages'
-import { DotsSeparator } from '@/ui'
-import { logo } from '@assets/icons'
-import { useProductLoader } from '@hooks/useProductLoader'
-import axios from 'axios'
-import { createBrowserRouter, Link } from 'react-router-dom'
-import { Layout } from '@/components'
-import React from 'react'
-
-interface IHandle {
-    crumb: () => JSX.Element
-}
 
 export const publicRoutes = createBrowserRouter([
     {
@@ -36,7 +30,7 @@ export const publicRoutes = createBrowserRouter([
                             <Link to={'product'}>Каталог</Link>
                         </>
                     ),
-                } as IHandle,
+                },
                 children: [
                     {
                         index: true,
@@ -47,13 +41,14 @@ export const publicRoutes = createBrowserRouter([
                         Component: ProductPage,
                         loader: async ({ request, params }) => {
                             try {
+                                if (!params.id) return ''
                                 const response = await axios.get<IProduct>(
-                                    `http://localhost:3004/products/${params.id}?_expand=makers`
+                                    `http://localhost:3004/products/${params?.id}?_expand=makers`
                                 )
 
                                 return response.data.name
                             } catch (error) {
-                                return error
+                                return error as string
                             }
                         },
                         handle: {

@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+
 import { IProduct } from '@/models'
 
 export interface ICartItem extends IProduct {
@@ -25,7 +26,7 @@ export const CartSlice = createSlice({
             if (
                 state.cartProductList.find(
                     item => item.id === action.payload.id
-                )
+                ) != null
             ) {
                 state.cartProductList = state.cartProductList.map(product => {
                     return product.id === action.payload.id

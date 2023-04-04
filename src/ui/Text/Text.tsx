@@ -5,7 +5,7 @@ import styles from './text.scss'
 
 import { EColor } from '@ui/assets/EColors'
 
-type TSizes = 10 | 12 | 14 | 16 | 24 | 30 | null
+type TSizes = 10 | 12 | 14 | 16 | 24 | 30 | 0
 
 type TWeight = 200 | 300 | 400 | 500 | 600 | 700 | 800
 
@@ -28,9 +28,9 @@ export function Text(props: ITextProps): JSX.Element {
         As = 'span',
         children,
         size = 14,
-        mobileSize = null,
-        tabletSize = null,
-        desktopSize = null,
+        mobileSize = size,
+        tabletSize = size,
+        desktopSize = size,
         color = EColor.black,
         weight = 400,
         underline = false,
@@ -39,7 +39,7 @@ export function Text(props: ITextProps): JSX.Element {
     } = props
 
     const classes = classNames(
-        styles[`s${size}`],
+        { [styles[`s${size}`]]: size },
         styles[color],
         { [styles[`w${weight}`]]: weight },
         { [styles[`m${mobileSize}`]]: mobileSize },

@@ -1,3 +1,7 @@
+import { useEffect, useState } from 'react'
+
+import * as React from 'react'
+
 import { CartButton, Counter } from '@/components'
 import { useAppDispatch, useAppSelector } from '@/hooks'
 import { IProduct } from '@/models'
@@ -7,8 +11,6 @@ import {
     ICartItem,
     incrementCount,
 } from '@store/cart/CartSlice'
-import { useEffect, useState } from 'react'
-import * as React from 'react'
 
 interface ICartButtonContainerProps {
     product: IProduct
@@ -25,12 +27,14 @@ export const CartButtonContainer: React.FC<ICartButtonContainerProps> = ({
 
     useEffect(() => {
         if (cartProductList.length === 0) return
+        if (!product) return
+        if (product.id.length === 0) return
 
         const cartProduct = cartProductList.find(item => item.id === product.id)
         setCartProduct(cartProduct)
     }, [cartProductList])
 
-    if (!cartProduct || cartProduct.count === 0) {
+    if (cartProduct == null || cartProduct.count === 0) {
         return (
             <CartButton
                 handlerClick={() =>

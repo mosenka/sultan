@@ -3,7 +3,7 @@ import * as React from 'react'
 
 import styles from './dotsseparator.scss'
 
-type TSize = 0 | 10 | 20 | 25 | 30 | null
+type TSize = 0 | 10 | 20 | 25 | 30
 
 interface IDotsSeparatorProps {
     height?: number
@@ -18,7 +18,7 @@ export const DotsSeparator: React.FC<IDotsSeparatorProps> = ({
     height = 40,
     size = 20,
     isHorizontal = false,
-    laptopSize = null,
+    laptopSize = 0,
     mobileSize = 0,
     tabletSize = 0,
 }) => {

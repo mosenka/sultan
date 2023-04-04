@@ -14,7 +14,7 @@ interface IAddressCardsProps {
 export const AddressCards: React.FC<IAddressCardsProps> = ({
     children,
     text,
-    desc = null,
+    desc = '',
     href: string,
 }) => {
     return (
@@ -24,7 +24,7 @@ export const AddressCards: React.FC<IAddressCardsProps> = ({
                 <Text size={14} weight={600} desktopSize={12}>
                     {text}
                 </Text>
-                {desc && (
+                {desc.length > 0 && (
                     <Text size={12} weight={300} desktopSize={10}>
                         {desc}
                     </Text>

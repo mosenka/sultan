@@ -1,9 +1,11 @@
-import { IProduct } from '@/models'
-import { Button, EColor, EIcons, Icon, SizeCard } from '@/ui'
 import classNames from 'classnames'
 import * as React from 'react'
 import { useState } from 'react'
+
 import styles from './admintablerow.scss'
+
+import { IProduct } from '@/models'
+import { Button, EColor, EIcons, Icon, SizeCard } from '@/ui'
 
 interface IAdminTableRowProps {
     product: IProduct

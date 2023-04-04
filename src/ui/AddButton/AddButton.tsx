@@ -1,4 +1,5 @@
 import * as React from 'react'
+
 import styles from './addbutton.scss'
 
 interface IAddButtonProps {
@@ -6,7 +7,7 @@ interface IAddButtonProps {
     handlerClick?: () => void
 }
 
-const NOOP = () => {}
+const NOOP = (): void => {}
 
 export const AddButton: React.FC<IAddButtonProps> = ({
     text,

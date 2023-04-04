@@ -1,4 +1,5 @@
-import { CartButtonContainer } from '@modules/cart/CartButtonContainer/CartButtonContainer'
+import { AdminContainer } from './admin'
+import { CartContainer } from './cart/CartContainer/CartContainer'
 import {
     MakerFilter,
     TypesFilter,
@@ -6,10 +7,11 @@ import {
     MakerAndPriceFilter,
     SortingSelect,
 } from './filters'
-import { ProductsList } from './products'
+
 import { ProductContainer } from './product/ProductContainer/ProductContainer'
-import { CartContainer } from './cart/CartContainer/CartContainer'
-import { AdminContainer } from './admin'
+import { ProductsList } from './products'
+
+import { CartButtonContainer } from '@modules/cart/CartButtonContainer/CartButtonContainer'
 
 export {
     AdminContainer,

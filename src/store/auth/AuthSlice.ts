@@ -1,8 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { IProduct, IUser } from '@/models'
 
 import { login } from '@/api/LoginService'
-import { CartSlice } from '@store/cart/CartSlice'
 
 interface ILoginState {
     isAuth: boolean

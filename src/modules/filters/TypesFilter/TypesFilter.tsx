@@ -2,7 +2,14 @@ import { useEffect } from 'react'
 import * as React from 'react'
 
 import { useAppDispatch, useAppSelector } from '@/hooks'
-import { Break, DotsSeparator, EColor, Text } from '@/ui'
+import {
+    Break,
+    DotsSeparator,
+    EColor,
+    ErrorMessage,
+    LoadingSpinner,
+    Text,
+} from '@/ui'
 import { selectCategory } from '@store/categories/CategoriesSlice'
 import { fetchCategories } from 'api/CategoriesService'
 
@@ -30,6 +37,14 @@ export const TypesFilter: React.FC = () => {
             </div>
         )
     })
+
+    if (isLoading) {
+        return <LoadingSpinner />
+    }
+
+    if (error.length > 0) {
+        return <ErrorMessage text={error} />
+    }
 
     return (
         <div style={{ paddingTop: '30px' }}>

@@ -1,7 +1,9 @@
+import * as React from 'react'
+
+import styles from './sizecard.scss'
+
 import { EColor, EIcons, Icon, Text } from '@/ui'
 import { TSizeType } from '@models/IProduct'
-import * as React from 'react'
-import styles from './sizecard.scss'
 
 interface ISizeCardProps {
     sizeType: TSizeType

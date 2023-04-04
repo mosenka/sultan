@@ -1,6 +1,8 @@
-import { useAppDispatch } from '@/hooks'
-import { addToCart } from '@store/cart/CartSlice'
 import * as React from 'react'
+
+import { Link } from 'react-router-dom'
+
+import styles from './productcard.scss'
 
 import { IProduct } from '@/models/IProduct'
 
@@ -11,16 +13,11 @@ interface IProductItemProps {
     children?: React.ReactNode
 }
 
-import styles from './productcard.scss'
-import { Link } from 'react-router-dom'
-
 export const ProductCard: React.FC<IProductItemProps> = ({
     product,
     children = null,
 }) => {
     const { id, img, sizeType, sizeValue, name, price, makers, brand } = product
-
-    const dispatch = useAppDispatch()
 
     return (
         <Card>

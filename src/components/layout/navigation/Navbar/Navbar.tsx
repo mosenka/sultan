@@ -1,4 +1,3 @@
-import { CartIconContainer } from '@modules/cart/CartIconContainer/CartIconContainer'
 import * as React from 'react'
 
 import styles from './navbar.scss'
@@ -17,6 +16,7 @@ import {
     SearchInput,
     Text,
 } from '@/ui'
+import { CartIconContainer } from '@modules/cart/CartIconContainer/CartIconContainer'
 
 interface INavbarProps {
     children?: React.ReactNode

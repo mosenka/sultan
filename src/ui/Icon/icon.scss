@@ -2,6 +2,14 @@
     fill: currentColor;
 }
 
+.fill_none {
+    fill: currentColor;
+}
+
+.stroke_none {
+    stroke: none;
+}
+
 .fill_black {
     fill: var(--color-black);
     stroke: none;

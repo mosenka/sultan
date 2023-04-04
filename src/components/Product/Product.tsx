@@ -1,14 +1,14 @@
-import { Counter } from '@/components'
-import { useAppDispatch, useAppSelector } from '@/hooks'
-import { addToCart } from '@store/cart/CartSlice'
 import classNames from 'classnames'
 import * as React from 'react'
 import { useEffect, useState } from 'react'
+
 import styles from './product.scss'
+
+import { Counter } from '@/components'
+import { useAppDispatch, useAppSelector } from '@/hooks'
 
 import { IProduct } from '@/models'
 import {
-    AddButton,
     Break,
     Button,
     Card,
@@ -20,6 +20,7 @@ import {
     Text,
     СharacteristicsItem,
 } from '@/ui'
+import { addToCart } from '@store/cart/CartSlice'
 
 interface IProductProps {
     product: IProduct
@@ -34,10 +35,11 @@ export const Product: React.FC<IProductProps> = ({ product }) => {
 
     useEffect(() => {
         if (cartProductList.length === 0) return
+        if (id.length === 0) return
 
         const cartItem = cartProductList.find(item => item.id === id)
 
-        if (cartItem) {
+        if (cartItem != null) {
             setCountInCart(cartItem.count)
         }
     }, [cartProductList])
@@ -91,9 +93,7 @@ export const Product: React.FC<IProductProps> = ({ product }) => {
                         </div>
                         <Button
                             handlerClick={() =>
-                                dispatch(
-                                    addToCart({ ...product, count: count })
-                                )
+                                dispatch(addToCart({ ...product, count }))
                             }
                         >
                             <Text weight={700} color={EColor.white}>
@@ -172,7 +172,7 @@ export const Product: React.FC<IProductProps> = ({ product }) => {
                             </Text>
                             <span
                                 className={classNames(styles.icon, {
-                                    [styles['hidden']]: isOpenDesc,
+                                    [styles.hidden]: isOpenDesc,
                                 })}
                             >
                                 <Icon icon={EIcons.arrowFull} width={7} />
@@ -194,7 +194,7 @@ export const Product: React.FC<IProductProps> = ({ product }) => {
                             </Text>
                             <span
                                 className={classNames(styles.icon, {
-                                    [styles['hidden']]: isOpenCharacteristics,
+                                    [styles.hidden]: isOpenCharacteristics,
                                 })}
                             >
                                 <Icon icon={EIcons.arrowFull} width={7} />

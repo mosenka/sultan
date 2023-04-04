@@ -1,6 +1,6 @@
-import { Break, Button, EColor, EIcons, Icon, Text } from '@/ui'
 import * as React from 'react'
-import styles from './cartbutton.scss'
+
+import { Break, Button, EColor, EIcons, Icon, Text } from '@/ui'
 
 interface ICartButtonProps {
     handlerClick: () => void

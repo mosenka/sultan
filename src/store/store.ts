@@ -3,11 +3,12 @@ import { configureStore, combineReducers } from '@reduxjs/toolkit'
 import categoriesReducer from './categories/CategoriesSlice'
 import makersReducer from './makers/MakersSlice'
 import priceReducer from './price/PriceSlice'
+import productReducer from './product/ProductSlice'
 import productsListReducer from './productsList/ProductsListSlice'
 import sortingReducer from './sorting/SortingSlice'
-import productReducer from './product/ProductSlice'
-import cartReducer from '@store/cart/CartSlice'
+
 import loginReducer from '@store/auth/AuthSlice'
+import cartReducer from '@store/cart/CartSlice'
 
 const rootReducer = combineReducers({
     productsListReducer,

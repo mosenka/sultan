@@ -1,8 +1,10 @@
-import { Card, EColor, EIcons, Icon } from '@/ui'
-import { useEffect, useRef } from 'react'
 import * as React from 'react'
+import { useEffect, useRef } from 'react'
 import { createPortal } from 'react-dom'
+
 import styles from './popup.scss'
+
+import { EColor, EIcons, Icon } from '@/ui'
 
 interface IPopupProps {
     children?: React.ReactNode
@@ -16,10 +18,10 @@ export const Popup: React.FC<IPopupProps> = ({
     closePopup,
 }) => {
     const node = document.querySelector('#modal_root')
-    if (!node) return null
+    if (node == null) return null
 
-    const ref = useRef<HTMLDivElement>(null)
     const fadeRef = useRef<HTMLDivElement>(null)
+    const ref = useRef<HTMLDivElement>(null)
 
     useEffect(() => {
         if (!ref) return

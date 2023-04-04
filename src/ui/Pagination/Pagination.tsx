@@ -3,7 +3,7 @@ import * as React from 'react'
 
 import styles from './pagination.scss'
 
-import { EIcons, Icon } from '@/ui'
+import { EColor, EIcons, Icon } from '@/ui'
 
 interface IPaginationProps {
     perPage: number
@@ -26,37 +26,40 @@ export const Pagination: React.FC<IPaginationProps> = ({
 
     for (let i = 1; i <= Math.ceil(totalCount / perPage); i++) {
         pageNumbers.push(
-            <span
+            <button
+                type="button"
                 key={i}
                 className={classNames(styles.item, {
                     [styles['is-active']]: i === currentPage,
                 })}
                 onClick={() => paginate(i)}
+                onKeyDown={() => paginate(i)}
             >
                 {i}
-            </span>
+            </button>
         )
     }
 
     return (
         <div className={styles.wrapper}>
-            <span
+            <button
+                type={'button'}
                 className={classNames(styles.arrow, styles.prev)}
                 onClick={previousPage}
+                onKeyDown={previousPage}
             >
-                <Icon icon={EIcons.arrow} width={9} />
-            </span>
+                <Icon icon={EIcons.arrow} width={9} fill={EColor.gold} />
+            </button>
 
-            {/* <span className={classNames(styles.item, styles['is-active'])}> */}
-            {/*    2 */}
-            {/* </span> */}
             {pageNumbers}
-            <span
+            <button
+                type={'button'}
                 className={classNames(styles.arrow, styles.next)}
                 onClick={nextPage}
+                onKeyDown={nextPage}
             >
-                <Icon icon={EIcons.arrow} width={9} />
-            </span>
+                <Icon icon={EIcons.arrow} width={9} fill={EColor.gold} />
+            </button>
         </div>
     )
 }

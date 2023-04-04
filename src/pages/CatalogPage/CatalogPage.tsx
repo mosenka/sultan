@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 
+import styles from './catalogpage.scss'
+
 import { Sidebar } from '@/components'
 import {
     ProductsList,
@@ -9,7 +11,6 @@ import {
 } from '@/modules'
 import { ButtonArrow, Container, ContainerFlex, Title } from '@/ui'
 import { FilterCategoryCards } from '@modules/filters'
-import styles from './catalogpage.scss'
 
 export const CatalogPage: React.FC = () => {
     const [isOpenFilters, setIsOpenFilters] = useState(false)
@@ -29,13 +30,15 @@ export const CatalogPage: React.FC = () => {
                 <div className={styles.desktopTitle}>
                     <h3 className={styles.title}>ПОДБОР ПО ПАРАМЕТРАМ</h3>
                 </div>
-                <div
+                <button
+                    type={'button'}
                     className={styles.tabletTitle}
                     onClick={() => setIsOpenFilters(!isOpenFilters)}
+                    onKeyDown={() => setIsOpenFilters(!isOpenFilters)}
                 >
                     <h3 className={styles.title}>ПОДБОР ПО ПАРАМЕТРАМ</h3>
                     <ButtonArrow isOpen={isOpenFilters} />
-                </div>
+                </button>
                 {isOpenFilters && <MakerAndPriceFilter />}
                 <div className={styles.desktopFilters}>
                     <MakerAndPriceFilter />

@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import * as React from 'react'
 
 import styles from './pricefilter.scss'
@@ -8,20 +7,21 @@ import { useAppDispatch, useAppSelector } from '@/hooks'
 import { setMaxPrice, setMinPrice } from '@/store/price/PriceSlice'
 import { EColor, Text, Break, InputPrice } from '@/ui'
 
-interface IPriceFilterProps {}
-
-export const PriceFilter: React.FC<IPriceFilterProps> = ({}) => {
+export const PriceFilter: React.FC = () => {
     const { maxPrice, minPrice } = useAppSelector(state => state.priceReducer)
-    const [isError, setIsError] = useState(false)
     const dispatch = useAppDispatch()
 
-    const handlerMinPriceInput = (event: React.FormEvent<HTMLInputElement>) => {
+    const handlerMinPriceInput = (
+        event: React.FormEvent<HTMLInputElement>
+    ): void => {
         const target = event.target as HTMLInputElement
 
         dispatch(setMinPrice(+target.value))
     }
 
-    const handlerMaxPriceInput = (event: React.FormEvent<HTMLInputElement>) => {
+    const handlerMaxPriceInput = (
+        event: React.FormEvent<HTMLInputElement>
+    ): void => {
         const target = event.target as HTMLInputElement
 
         dispatch(setMaxPrice(+target.value))

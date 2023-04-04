@@ -1,3 +1,9 @@
+import * as React from 'react'
+
+import { useState } from 'react'
+
+import styles from './cartcontainer.scss'
+
 import { CartProductItem, Popup } from '@/components'
 import { useAppDispatch, useAppSelector } from '@/hooks'
 import { Button, Container, EColor, EIcons, Icon, Text, Title } from '@/ui'
@@ -6,13 +12,8 @@ import {
     deleteFromCart,
     incrementCount,
 } from '@store/cart/CartSlice'
-import * as React from 'react'
-import { useState } from 'react'
-import styles from './cartcontainer.scss'
 
-interface ICartContainerProps {}
-
-export const CartContainer: React.FC<ICartContainerProps> = ({}) => {
+export const CartContainer: React.FC = () => {
     const { cartProductList, totalSum } = useAppSelector(
         state => state.cartReducer
     )

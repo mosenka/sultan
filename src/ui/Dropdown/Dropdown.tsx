@@ -2,9 +2,8 @@ import * as React from 'react'
 
 import { useEffect, useRef, useState } from 'react'
 
-import styles from 'ui/Dropdown/dropdown.scss'
-
 import { Break, EColor, EIcons, Icon, Text } from '@/ui'
+import styles from 'ui/Dropdown/dropdown.scss'
 
 interface IDropdownProps {
     children: React.ReactNode
@@ -18,7 +17,7 @@ export const Dropdown: React.FC<IDropdownProps> = ({
     selectedItem = 'Название',
 }) => {
     const ref = useRef<HTMLDivElement>(null)
-    const buttonRef = useRef<HTMLDivElement>(null)
+    const buttonRef = useRef<HTMLButtonElement>(null)
 
     const [isOpen, setIsOpen] = useState(false)
 
@@ -26,9 +25,9 @@ export const Dropdown: React.FC<IDropdownProps> = ({
         function handleClick(event: MouseEvent): void {
             if (
                 event.target instanceof Node &&
-                !ref.current?.contains(event.target)
+                !(ref.current?.contains(event.target) ?? false)
             ) {
-                if (buttonRef.current?.contains(event.target)) return
+                if (buttonRef.current?.contains(event.target) ?? true) return
                 setIsOpen(false)
             }
         }
@@ -42,9 +41,11 @@ export const Dropdown: React.FC<IDropdownProps> = ({
 
     return (
         <div className={styles.wrapper}>
-            <div
+            <button
+                type={'button'}
                 className={styles.head}
                 onClick={() => setIsOpen(!isOpen)}
+                onKeyDown={() => setIsOpen(!isOpen)}
                 ref={buttonRef}
             >
                 <Text size={16} weight={500}>
@@ -56,7 +57,7 @@ export const Dropdown: React.FC<IDropdownProps> = ({
                 </Text>
                 <Break size={4} />
                 <Icon icon={EIcons.arrowFull} width={5} fill={EColor.fiord} />
-            </div>
+            </button>
             <div
                 ref={ref}
                 className={styles.list}

@@ -1,4 +1,3 @@
-import { CartButtonContainer } from '@/modules'
 import * as React from 'react'
 import { useEffect, useState } from 'react'
 
@@ -6,25 +5,24 @@ import styles from './productslist.scss'
 
 import { fetchProductsList } from '@/api/ProductsListService'
 
-import { CartButton, ProductCard } from '@/components'
+import { ProductCard } from '@/components'
 import { getMaxPrice } from '@/helpers/objHelper'
 import { useAppSelector, useAppDispatch } from '@/hooks'
 
 import { IProduct } from '@/models'
+import { CartButtonContainer } from '@/modules'
 import { setInitPrice } from '@/store/price/PriceSlice'
 
 import { LoadingSpinner, ErrorMessage, Pagination } from '@/ui'
 import { useProductList } from '@hooks/useProductList'
 
-interface IProductsListProps {}
-
-export const ProductsList: React.FC<IProductsListProps> = ({}) => {
+export const ProductsList: React.FC = () => {
     const dispatch = useAppDispatch()
     const { isLoading, productsList, error, isSorted } = useAppSelector(
         state => state.productsListReducer
     )
     const [currentPage, setCurrentPage] = useState<number>(1)
-    const [perPage, setPerPage] = useState(6)
+    const [perPage] = useState(6)
 
     const sortedProductsList = useProductList(productsList, isSorted)
 
@@ -37,7 +35,7 @@ export const ProductsList: React.FC<IProductsListProps> = ({}) => {
         setCurrentPageProductsList(
             [...sortedProductsList].splice(startIndex, perPage)
         )
-    }, [sortedProductsList, currentPage])
+    }, [sortedProductsList, currentPage, perPage])
 
     useEffect(() => {
         if (sortedProductsList.length === 0) return
@@ -55,17 +53,17 @@ export const ProductsList: React.FC<IProductsListProps> = ({}) => {
         dispatch(setInitPrice(maxValue))
     }, [productsList])
 
-    const handlerPaginate = (num: number) => {
+    const handlerPaginate = (num: number): void => {
         setCurrentPage(num)
     }
 
-    const handlerNextPage = () => {
+    const handlerNextPage = (): void => {
         if (currentPage < Math.ceil(sortedProductsList.length / perPage)) {
             setCurrentPage(currentPage + 1)
         }
     }
 
-    const handlerPreviosPage = () => {
+    const handlerPreviosPage = (): void => {
         if (
             currentPage <= Math.ceil(sortedProductsList.length / perPage) &&
             currentPage > 1
@@ -78,7 +76,7 @@ export const ProductsList: React.FC<IProductsListProps> = ({}) => {
         return <LoadingSpinner />
     }
 
-    if (error) {
+    if (error.length > 0) {
         return <ErrorMessage text={error} />
     }
 

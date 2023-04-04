@@ -1,6 +1,8 @@
-import { TSizeType } from '@models/IProduct'
 import * as React from 'react'
+
 import styles from './selectsizetype.scss'
+
+import { TSizeType } from '@models/IProduct'
 
 interface ISelectSizeTypeProps {
     name: string

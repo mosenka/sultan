@@ -1,10 +1,12 @@
+import { useEffect } from 'react'
+
+import * as React from 'react'
+
+import styles from './categogiesformgroup.scss'
+
 import { fetchCategories } from '@/api'
 import { useAppDispatch, useAppSelector } from '@/hooks'
 import { InputCheckbox } from '@/ui'
-import { useEffect } from 'react'
-import * as React from 'react'
-import styles from './categogiesformgroup.scss'
-import { v4 as uuidv4 } from 'uuid'
 
 interface ICategogiesFormGroutProps {
     handleChange: (e: React.ChangeEvent<any>) => void

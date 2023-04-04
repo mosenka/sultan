@@ -3,7 +3,7 @@ import React from 'react'
 
 import styles from 'ui/Break/break.scss'
 
-type TBreakSize = '0' | 4 | 6 | 8 | 10 | 12 | 15 | 20 | 30 | 38 | null
+type TBreakSize = '0' | 0 | 4 | 6 | 8 | 10 | 12 | 15 | 20 | 30 | 38
 
 // type TDisplays = 'mobile' | 'tablet' | 'desktop'
 
@@ -23,9 +23,9 @@ export function Break(props: IBreakProps): JSX.Element {
         inline = false,
         top = false,
         size,
-        mobileSize = null,
-        tabletSize = null,
-        desktopSize = null,
+        mobileSize = 0,
+        tabletSize = 0,
+        desktopSize = 0,
     } = props
     const classes = classNames(
         styles[`s${size}`],

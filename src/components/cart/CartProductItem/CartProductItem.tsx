@@ -1,5 +1,6 @@
-import { ICartItem } from '@store/cart/CartSlice'
+import * as React from 'react'
 import { Link } from 'react-router-dom'
+
 import {
     AddButton,
     Break,
@@ -11,7 +12,8 @@ import {
     SizeCard,
     Text,
 } from '@/ui'
-import * as React from 'react'
+import { ICartItem } from '@store/cart/CartSlice'
+
 import styles from 'components/cart/CartProductItem/cartproductitem.scss'
 
 interface ICartProductItemProps {

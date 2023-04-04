@@ -25,7 +25,12 @@ export const MoreButton: React.FC<IMoreButtonProps> = ({
     }
 
     return (
-        <p className={styles.wrapper} onClick={handlerOpen}>
+        <button
+            type={'button'}
+            className={styles.wrapper}
+            onClick={handlerOpen}
+            onKeyDown={handlerOpen}
+        >
             <Text>{isOpen ? 'Скрыть' : text}</Text>
             <Break size={4} />
             <span
@@ -35,6 +40,6 @@ export const MoreButton: React.FC<IMoreButtonProps> = ({
             >
                 <Icon icon={EIcons.arrowFull} width={7} />
             </span>
-        </p>
+        </button>
     )
 }

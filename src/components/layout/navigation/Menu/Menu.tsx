@@ -13,7 +13,7 @@ const MENULIST = [
     { name: 'Контакты', link: '/contacts' },
 ]
 
-export const Menu: React.FC = ({}) => {
+export const Menu: React.FC = () => {
     const menuList = MENULIST.map((item, index) => {
         const id = uuidv4()
         const isLastChild = MENULIST.length - 1 === index

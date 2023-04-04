@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import * as React from 'react'
-import styles from './sortingselect.scss'
 
 import { useAppDispatch, useAppSelector } from '@/hooks'
 import { Dropdown } from '@/ui'
@@ -14,7 +13,7 @@ export const SortingSelect: React.FC = () => {
     const [selectedItem, setSelectedItem] = useState<string>('')
 
     useEffect(() => {
-        if (!sortingList) return
+        if (sortingList.length === 0) return
         const item = sortingList.find(item => item.isSelected)
         if (item != null) {
             setSelectedItem(item.name)

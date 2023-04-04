@@ -6,14 +6,12 @@ import { IIconProps } from './icon.types'
 
 import { iconsList } from './iconsList'
 
-import { EColor } from '@/ui'
-
 export function Icon({
     icon,
     height = '100%',
     width,
-    stroke,
-    fill,
+    stroke = 'none',
+    fill = 'none',
 }: IIconProps): JSX.Element {
     const [symbol] = iconsList.filter(elem => elem.name === icon)
 

@@ -15,13 +15,15 @@ export const FilterCard: React.FC<IFilterCardProps> = ({
     isSelected = false,
 }) => {
     return (
-        <div
+        <button
+            type={'button'}
             className={classNames(styles.card, {
                 [styles['is-active']]: isSelected,
             })}
             onClick={handlerClick}
+            onKeyDown={handlerClick}
         >
             {text}
-        </div>
+        </button>
     )
 }

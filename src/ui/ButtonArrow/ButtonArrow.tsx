@@ -1,8 +1,10 @@
 /*  */
-import { EIcons, Icon } from '@/ui'
 import classNames from 'classnames'
 import * as React from 'react'
+
 import styles from './buttonarrow.scss'
+
+import { EIcons, Icon } from '@/ui'
 
 interface IButtonArrowProps {
     isOpen?: boolean

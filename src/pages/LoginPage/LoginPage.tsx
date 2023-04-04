@@ -1,32 +1,37 @@
+import classNames from 'classnames'
+
+import { useFormik } from 'formik'
+import { useEffect } from 'react'
+
+import * as React from 'react'
+
+import { Link, Navigate } from 'react-router-dom'
+
+import styles from './loginpage.scss'
+import { validate } from './validate'
+
 import { login } from '@/api/LoginService'
 import { Popup } from '@/components'
 import { useAppDispatch, useAppSelector } from '@/hooks'
 import { LoadingSpinner, Text } from '@/ui'
 import { setIsAuth } from '@store/auth/AuthSlice'
-import classNames from 'classnames'
-import { useEffect } from 'react'
-import { validate } from './validate'
-import * as React from 'react'
-import { Link, Navigate } from 'react-router-dom'
-import styles from './loginpage.scss'
-import { useFormik } from 'formik'
-
-interface ILoginPageProps {}
 
 export interface ILoginFormValues {
     userName: string
     password: string
 }
 
-export const LoginPage: React.FC<ILoginPageProps> = ({}) => {
+export const LoginPage: React.FC = () => {
     const { isLoading, isAuth, error } = useAppSelector(
         state => state.loginReducer
     )
     const dispath = useAppDispatch()
 
     useEffect(() => {
-        let user = localStorage.getItem('user')
+        const user = localStorage.getItem('user')
+
         if (!user) return
+        if (user.length === 0) return
         const { accessToken } = JSON.parse(user)
         if (!accessToken) return
 
@@ -41,7 +46,7 @@ export const LoginPage: React.FC<ILoginPageProps> = ({}) => {
         validate,
         onSubmit: values => {
             const { userName, password } = values
-            dispath(login({ login: userName, password: password }))
+            dispath(login({ login: userName, password }))
         },
     })
 

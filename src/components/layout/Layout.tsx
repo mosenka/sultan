@@ -1,4 +1,3 @@
-import { MobButtonstPanel } from '@components/layout/navigation/MobButtonstPanel/MobButtonstPanel'
 import * as React from 'react'
 import { Outlet } from 'react-router-dom'
 
@@ -9,7 +8,7 @@ import { Breadcrumbs } from './navigation/Breadcrumbs/Breadcrumbs'
 import { Navbar } from './navigation/Navbar/Navbar'
 import { TopLine } from './navigation/TopLine/TopLine'
 
-import { ContainerFlex } from '@/ui'
+import { MobButtonstPanel } from '@components/layout/navigation/MobButtonstPanel/MobButtonstPanel'
 
 interface ILayoutProps {
     children?: React.ReactNode

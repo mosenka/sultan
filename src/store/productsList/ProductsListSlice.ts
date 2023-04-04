@@ -32,7 +32,7 @@ export const productsListSlice = createSlice({
         deleteProduct: (state, action: PayloadAction<string>) => {
             const id = action.payload
             state.productsList = state.productsList.filter(
-                product => product.id != id
+                product => product.id !== id
             )
         },
         editProduct: (state, action: PayloadAction<IProduct>) => {

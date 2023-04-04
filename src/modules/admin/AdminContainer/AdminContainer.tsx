@@ -1,8 +1,14 @@
+import { useEffect, useState } from 'react'
+
+import * as React from 'react'
+
+import styles from './admincontainer.scss'
+
 import { fetchCategories, fetchProductsList } from '@/api'
 import { AdminTableRow, Popup } from '@/components'
 import { useAppDispatch, useAppSelector } from '@/hooks'
 import { IProduct } from '@/models'
-import { edit } from '@assets/icons'
+import { Container, ErrorMessage, LoadingSpinner, Title } from '@/ui'
 import { AdminForm } from '@modules/admin'
 import { getCategoryNameById } from '@modules/admin/AdminContainer/helper'
 import {
@@ -10,15 +16,8 @@ import {
     deleteProduct,
     editProduct,
 } from '@store/productsList/ProductsListSlice'
-import { useEffect, useState } from 'react'
-import * as React from 'react'
-import styles from './admincontainer.scss'
 
-import { Container, ErrorMessage, LoadingSpinner, Title } from '@/ui'
-
-interface IAdminContainerProps {}
-
-export const AdminContainer: React.FC<IAdminContainerProps> = ({}) => {
+export const AdminContainer: React.FC = () => {
     const { error, isLoading, productsList } = useAppSelector(
         state => state.productsListReducer
     )
@@ -47,12 +46,11 @@ export const AdminContainer: React.FC<IAdminContainerProps> = ({}) => {
         return <p>список пустой</p>
     }
 
-    const handlerDelete = (id: string) => {
+    const handlerDelete = (id: string): void => {
         dispatch(deleteProduct(id))
     }
 
-    const handlerEdit = (product: IProduct) => {
-        if (!product) return
+    const handlerEdit = (product: IProduct): void => {
         setInitEditProduct(product)
         setIsEdit(true)
     }
@@ -72,11 +70,11 @@ export const AdminContainer: React.FC<IAdminContainerProps> = ({}) => {
         )
     })
 
-    const onSaveNewProduct = (product: IProduct) => {
+    const onSaveNewProduct = (product: IProduct): void => {
         dispatch(addNewProduct(product))
     }
 
-    const seveEditProduct = (product: IProduct) => {
+    const seveEditProduct = (product: IProduct): void => {
         dispatch(editProduct(product))
         setIsEdit(false)
     }
@@ -123,7 +121,7 @@ export const AdminContainer: React.FC<IAdminContainerProps> = ({}) => {
                     categoriesId={[]}
                 />
             </Container>
-            {isEdit && initEditProduct && (
+            {isEdit && initEditProduct != null && (
                 <Popup isOpen={isEdit} closePopup={() => setIsEdit(false)}>
                     <div className={styles.editWrapper}>
                         <AdminForm
