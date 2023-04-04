@@ -4,7 +4,7 @@ import styles from './filtersstyle.scss'
 
 import { useAppDispatch } from '@/hooks'
 import { MakerFilter, PriceFilter } from '@/modules'
-import { Break, Button } from '@/ui'
+import { Break, Button, EIcons, Icon } from '@/ui'
 import { resetSelectedMakers } from '@store/makers/MakersSlice'
 import { resetPrices } from '@store/price/PriceSlice'
 import { sortProducts } from '@store/productsList/ProductsListSlice'
@@ -31,7 +31,7 @@ export const MakerAndPriceFilter: React.FC = () => {
                 </Button>
                 <Break size={10} />
                 <Button size={'circle'} handlerClick={clearFilters}>
-                    x
+                    <Icon icon={EIcons.dumpster} width={20} />
                 </Button>
             </div>
         </div>

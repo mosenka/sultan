@@ -17,9 +17,6 @@ export const Popup: React.FC<IPopupProps> = ({
     isOpen,
     closePopup,
 }) => {
-    const node = document.querySelector('#modal_root')
-    if (node == null) return null
-
     const fadeRef = useRef<HTMLDivElement>(null)
     const ref = useRef<HTMLDivElement>(null)
 
@@ -43,6 +40,9 @@ export const Popup: React.FC<IPopupProps> = ({
             document.removeEventListener('click', handleClick)
         }
     }, [])
+
+    const node = document.querySelector('#modal_root')
+    if (node == null) return null
 
     return isOpen ? (
         createPortal(

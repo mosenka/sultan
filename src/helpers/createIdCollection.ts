@@ -2,7 +2,7 @@ export const createIdCollection = (arr: any[], key: string): Set<any> => {
     const set = new Set()
 
     arr.forEach(item => {
-        if (item[key]) {
+        if (item[key] as Boolean) {
             set.add(item.id)
         }
     })
