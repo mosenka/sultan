@@ -9,6 +9,7 @@ import {
     AdminPage,
     CartPage,
     CatalogPage,
+    ErrorPage,
     LoginPage,
     ProductPage,
 } from '@/pages'
@@ -17,6 +18,7 @@ export const routes = [
     {
         path: '/',
         Component: Layout,
+        errorElement: <ErrorPage />,
         children: [
             {
                 index: true,
