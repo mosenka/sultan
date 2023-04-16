@@ -1,13 +1,18 @@
 import { useMemo } from 'react'
 
-import { createIdCollection } from '@/helpers/createIdCollection'
 import { IProduct } from '@/models'
 import { useAppSelector } from '@hooks/useReducer'
 
 export const useFilterByCategories = (productsList: IProduct[]): IProduct[] => {
     const { categories } = useAppSelector(state => state.categoriesReducer)
 
-    const selectedCategoriesList = createIdCollection(categories, 'isSelected')
+    const selectedCategoriesList = new Set()
+
+    categories.forEach(category => {
+        if (category.isSelected) {
+            selectedCategoriesList.add(category.id)
+        }
+    })
 
     const filteredList = useMemo(() => {
         if (selectedCategoriesList.size > 0) {

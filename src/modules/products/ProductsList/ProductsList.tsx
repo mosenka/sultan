@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 
 import styles from './productslist.scss'
 
-import { fetchProductsList } from '@/api/ProductsListService'
+import { fetchProductsList } from '@/api/productList/ProductsListService'
 
 import { ProductCard } from '@/components'
 import { getMaxPrice } from '@/helpers/objHelper'

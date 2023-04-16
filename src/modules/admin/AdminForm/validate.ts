@@ -15,7 +15,7 @@ export const validate = (
     if (values.desc.length === 0) {
         errors.desc = 'Обязательное поле'
     }
-    if (!values.price) {
+    if (values.price === 0) {
         errors.price = 'Обязательное поле'
     }
     if (!isFinite(+values.price)) {

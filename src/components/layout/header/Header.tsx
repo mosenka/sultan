@@ -7,5 +7,9 @@ interface IHeaderProps {
 }
 
 export const Header: React.FC<IHeaderProps> = ({ children }) => {
-    return <header className={styles.header}>{children}</header>
+    return (
+        <header className={styles.header} data-testid="header">
+            {children}
+        </header>
+    )
 }

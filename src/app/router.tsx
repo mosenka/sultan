@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 import React from 'react'
-import { createBrowserRouter, Link } from 'react-router-dom'
+import { createBrowserRouter, Link, RouteObject } from 'react-router-dom'
 
 import { Layout } from '@/components'
 import { IProduct } from '@/models'
@@ -13,7 +13,7 @@ import {
     ProductPage,
 } from '@/pages'
 
-export const publicRoutes = createBrowserRouter([
+export const routes = [
     {
         path: '/',
         Component: Layout,
@@ -41,9 +41,10 @@ export const publicRoutes = createBrowserRouter([
                         Component: ProductPage,
                         loader: async ({ request, params }) => {
                             try {
-                                if (params.id?.length === 0) return
+                                if (params.id == null || params.id.length === 0)
+                                    return
                                 const response = await axios.get<IProduct>(
-                                    `http://localhost:3004/products/${params?.id}?_expand=makers`
+                                    `http://localhost:3004/products/${params.id}?_expand=makers`
                                 )
 
                                 return response.data.name
@@ -84,4 +85,6 @@ export const publicRoutes = createBrowserRouter([
             },
         ],
     },
-])
+] as RouteObject[]
+
+export const publicRoutes = createBrowserRouter(routes)

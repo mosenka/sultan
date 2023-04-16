@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import * as React from 'react'
 
-import styles from '@ui/form/InputPrice/inputprice.scss'
+import styles from './inputprice.scss'
 
 interface IInputPriseProps {
     value: number

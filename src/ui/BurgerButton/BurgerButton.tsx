@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 import { EIcons, Icon } from '@/ui'
-import styles from 'ui/BurgerButton/burgerbutton.scss'
+import styles from './burgerbutton.scss'
 
 export const BurgerButton: React.FC = () => {
     return (

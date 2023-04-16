@@ -3,5 +3,6 @@ export const getMaxPrice = (arr: any[]): number => {
 
     arr.forEach(item => arrPrices.push(item.price))
 
-    return Math.max(...arrPrices)
+
+    return Math.max(...arrPrices) ? Math.max(...arrPrices) : 0
 }

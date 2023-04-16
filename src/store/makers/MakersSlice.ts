@@ -37,27 +37,27 @@ export const MakersSlice = createSlice({
             })
         },
     },
-    extraReducers: {
-        // success
-        [fetchMakers.fulfilled.type]: (
-            state,
-            action: PayloadAction<IMaker[]>
-        ) => {
-            state.isLoading = false
-            state.error = ''
-            state.makersList = action.payload.map((item, index) => {
-                return { ...item, isSelected: false, isShow: index < 4 }
-            })
-        },
-        // loading
-        [fetchMakers.pending.type]: state => {
+    extraReducers: builder => {
+        builder.addCase(
+            fetchMakers.fulfilled,
+            (state, action: PayloadAction<IMaker[]>) => {
+                state.isLoading = false
+                state.error = ''
+                state.makersList = action.payload.map((item, index) => {
+                    return { ...item, isSelected: false, isShow: index < 4 }
+                })
+            }
+        )
+        builder.addCase(fetchMakers.pending, state => {
             state.isLoading = true
-        },
-        // error
-        [fetchMakers.rejected.type]: (state, action: PayloadAction<string>) => {
+            if (state.error.length > 0) {
+                state.error = ''
+            }
+        })
+        builder.addCase(fetchMakers.rejected, (state, action) => {
             state.isLoading = false
-            state.error = action.payload
-        },
+            state.error = action.error.message as string
+        })
     },
 })
 

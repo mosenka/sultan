@@ -6,7 +6,7 @@ export interface ICartItem extends IProduct {
     count: number
 }
 
-interface ICartState {
+export interface ICartState {
     cartProductList: ICartItem[]
     totalSum: number
     totalCount: number

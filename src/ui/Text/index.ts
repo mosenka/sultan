@@ -1,1 +1,1 @@
-export * from 'ui/Text/Text'
+export * from './Text'

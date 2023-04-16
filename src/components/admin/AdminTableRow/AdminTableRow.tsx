@@ -41,11 +41,13 @@ export const AdminTableRow: React.FC<IAdminTableRowProps> = ({
             <td className={styles.cell}>{makers.name}</td>
             <td className={styles.cell}>{brand}</td>
             <td className={styles.cell}>{categories.join(',')}</td>
-            <td
-                className={classNames(styles.cell, styles.descCell)}
-                onClick={() => setIsShortDesc(!isShortDesc)}
-            >
-                {isShortDesc ? desc.substring(0, 50) : desc}
+            <td className={classNames(styles.cell, styles.descCell)}>
+                <p
+                    onClick={() => setIsShortDesc(!isShortDesc)}
+                    role={'textbox'}
+                >
+                    {isShortDesc ? desc.substring(0, 50) : desc}
+                </p>
             </td>
             <td className={classNames(styles.cell, styles.cellButton)}>
                 <Button size={'circle'} handlerClick={() => deleteItem(id)}>

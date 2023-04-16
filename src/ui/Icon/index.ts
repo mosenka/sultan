@@ -1,1 +1,1 @@
-export * from 'ui/Icon/Icon'
+export * from './Icon'

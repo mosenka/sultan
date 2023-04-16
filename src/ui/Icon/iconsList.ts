@@ -9,6 +9,7 @@ import {
     box,
     logo,
     loc,
+    close,
     edit,
     mail,
     rectangles,

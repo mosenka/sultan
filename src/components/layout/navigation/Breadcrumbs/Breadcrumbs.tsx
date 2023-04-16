@@ -5,7 +5,7 @@ import * as React from 'react'
 import { Link, useMatches } from 'react-router-dom'
 
 import { ButtonArrow, Container, DotsSeparator, Text } from '@/ui'
-import styles from 'components/layout/navigation/Breadcrumbs/breadcrumbs.scss'
+import styles from './breadcrumbs.scss'
 
 interface IMatch {
     id: string

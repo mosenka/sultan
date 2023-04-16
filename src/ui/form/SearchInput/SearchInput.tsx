@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 import { EColor, EIcons, Icon } from '@/ui'
-import styles from 'ui/form/SearchInput/searchinput.scss'
+import styles from './searchinput.scss'
 
 interface ISearchInputProps {
     value: string

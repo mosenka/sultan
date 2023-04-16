@@ -2,7 +2,7 @@ import classNames from 'classnames'
 import * as React from 'react'
 
 import { EIcons, Icon } from '@/ui'
-import styles from 'ui/SocialList/sociallist.scss'
+import styles from './sociallist.scss'
 
 export const SocialList: React.FC = () => {
     return (

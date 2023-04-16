@@ -1,6 +1,6 @@
 import React from 'react'
 
-import styles from './loadingspinner.css'
+import styles from './loadingspinner.scss'
 
 export function LoadingSpinner(): React.ReactElement {
     return (

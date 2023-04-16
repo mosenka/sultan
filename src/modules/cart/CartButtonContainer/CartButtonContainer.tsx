@@ -27,7 +27,6 @@ export const CartButtonContainer: React.FC<ICartButtonContainerProps> = ({
 
     useEffect(() => {
         if (cartProductList.length === 0) return
-        if (!product) return
         if (product.id.length === 0) return
 
         const cartProduct = cartProductList.find(item => item.id === product.id)

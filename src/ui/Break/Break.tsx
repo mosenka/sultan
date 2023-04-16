@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import React from 'react'
 
-import styles from 'ui/Break/break.scss'
+import styles from './break.scss'
 
 type TBreakSize = '0' | 0 | 4 | 6 | 8 | 10 | 12 | 15 | 20 | 30 | 38
 

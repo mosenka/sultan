@@ -10,6 +10,7 @@ export const fetchProductsList = createAsyncThunk<IProduct[]>(
             const response = await axios.get<IProduct[]>(
                 'http://localhost:3004/products?_expand=makers'
             )
+
             return response.data
         } catch (error) {
             return thunkAPI.rejectWithValue(

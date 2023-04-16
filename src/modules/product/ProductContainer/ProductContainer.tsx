@@ -2,7 +2,7 @@ import * as React from 'react'
 import { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 
-import { fetchProductById } from '@/api/ProductService'
+import { fetchProductById } from '@/api/product/ProductService'
 import { Product } from '@/components'
 import { useAppDispatch, useAppSelector } from '@/hooks'
 import { ErrorMessage, LoadingSpinner } from '@/ui'
@@ -16,8 +16,7 @@ export const ProductContainer: React.FC = () => {
     const dispatch = useAppDispatch()
 
     useEffect(() => {
-        if (!id) return
-        if (id.length === 0) return
+        if (id == null || id.length === 0) return
 
         dispatch(fetchProductById(id))
     }, [id])
@@ -29,5 +28,9 @@ export const ProductContainer: React.FC = () => {
         return <ErrorMessage text={error} />
     }
 
-    return <>{product && <Product product={product} />}</>
+    return (
+        <>
+            <Product product={product} />
+        </>
+    )
 }

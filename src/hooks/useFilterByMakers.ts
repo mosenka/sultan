@@ -1,6 +1,5 @@
 import { useMemo } from 'react'
 
-import { createIdCollection } from '@/helpers/createIdCollection'
 import { IProduct } from '@/models'
 import { useAppSelector } from '@hooks/useReducer'
 
@@ -10,7 +9,13 @@ export const useFilterByMakers = (
 ): IProduct[] => {
     const { makersList } = useAppSelector(state => state.makersReducer)
 
-    const selectedMakersList = createIdCollection(makersList, 'isSelected')
+    const selectedMakersList = new Set()
+
+    makersList.forEach(maker => {
+        if (maker.isSelected) {
+            selectedMakersList.add(maker.id)
+        }
+    })
 
     const filteredList = useMemo(() => {
         if (selectedMakersList.size > 0) {

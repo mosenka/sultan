@@ -41,7 +41,7 @@ export const CartContainer: React.FC = () => {
                     {cartProductList.length > 0 ? (
                         productsList
                     ) : (
-                        <p> ничего нет</p>
+                        <p data-testid="empty-cart"> ничего нет</p>
                     )}
 
                     <div className={styles.inner}>

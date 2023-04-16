@@ -11,7 +11,7 @@ import {
     Text,
 } from '@/ui'
 import { selectCategory } from '@store/categories/CategoriesSlice'
-import { fetchCategories } from 'api/CategoriesService'
+import { fetchCategories } from '@/api/CategoriesService'
 
 export const TypesFilter: React.FC = () => {
     const { isLoading, error, categories } = useAppSelector(

@@ -10,7 +10,7 @@ import {
     EIcons,
     Icon,
 } from '@/ui'
-import styles from 'components/layout/navigation/TopLine/topline.scss'
+import styles from './topline.scss'
 
 export const TopLine: React.FC = () => {
     return (

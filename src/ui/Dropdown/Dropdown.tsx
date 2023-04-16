@@ -3,7 +3,7 @@ import * as React from 'react'
 import { useEffect, useRef, useState } from 'react'
 
 import { Break, EColor, EIcons, Icon, Text } from '@/ui'
-import styles from 'ui/Dropdown/dropdown.scss'
+import styles from './dropdown.scss'
 
 interface IDropdownProps {
     children: React.ReactNode

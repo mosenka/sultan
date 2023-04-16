@@ -98,7 +98,12 @@ export const AdminForm: React.FC<IAdminFormProps> = ({
                 <AdminFormInput
                     name={'name'}
                     title={'название'}
-                    isError={Boolean(formik.touched.name && formik.errors.name)}
+                    isError={Boolean(
+                        formik.touched.name != null &&
+                            formik.touched.name &&
+                            formik.errors.name != null &&
+                            formik.errors.name
+                    )}
                     handleChange={formik.handleChange}
                     value={formik.values.name}
                     errorText={formik.errors.name}
@@ -107,7 +112,10 @@ export const AdminForm: React.FC<IAdminFormProps> = ({
                     name={'price'}
                     title={'цена'}
                     isError={Boolean(
-                        formik.touched.price && formik.errors.price
+                        formik.touched.price != null &&
+                            formik.touched.price &&
+                            formik.errors.price != null &&
+                            formik.errors.price
                     )}
                     handleChange={formik.handleChange}
                     value={+formik.values.price}
@@ -117,7 +125,10 @@ export const AdminForm: React.FC<IAdminFormProps> = ({
                     name={'brand'}
                     title={'бренд'}
                     isError={Boolean(
-                        formik.touched.brand && formik.errors.brand
+                        formik.touched.brand != null &&
+                            formik.touched.brand &&
+                            formik.errors.brand != null &&
+                            formik.errors.brand
                     )}
                     handleChange={formik.handleChange}
                     value={formik.values.brand}
@@ -132,7 +143,10 @@ export const AdminForm: React.FC<IAdminFormProps> = ({
                     name={'sizeValue'}
                     title={'размер'}
                     isError={Boolean(
-                        formik.touched.sizeValue && formik.errors.sizeValue
+                        formik.touched.sizeValue != null &&
+                            formik.touched.sizeValue &&
+                            formik.errors.sizeValue != null &&
+                            formik.errors.sizeValue
                     )}
                     handleChange={formik.handleChange}
                     value={formik.values.sizeValue}
@@ -141,7 +155,12 @@ export const AdminForm: React.FC<IAdminFormProps> = ({
                 <AdminFormInput
                     name={'desc'}
                     title={'Описание'}
-                    isError={Boolean(formik.touched.desc && formik.errors.desc)}
+                    isError={Boolean(
+                        formik.touched.desc != null &&
+                            formik.touched.desc &&
+                            formik.errors.desc != null &&
+                            formik.errors.desc
+                    )}
                     handleChange={formik.handleChange}
                     value={formik.values.desc}
                     As={'textarea'}
@@ -150,7 +169,10 @@ export const AdminForm: React.FC<IAdminFormProps> = ({
                 <SelectMakers
                     handleChange={formik.handleChange}
                     isError={Boolean(
-                        formik.touched.makersId && formik.errors.makersId
+                        formik.touched.makersId != null &&
+                            formik.touched.makersId &&
+                            formik.errors.makersId != null &&
+                            formik.errors.makersId
                     )}
                     errorText={formik.errors.makersId}
                     makersList={makersList}
@@ -162,7 +184,9 @@ export const AdminForm: React.FC<IAdminFormProps> = ({
                     inputName={'categoriesId'}
                     values={formik.values.categoriesId}
                     isError={Boolean(
-                        formik.touched.categoriesId &&
+                        formik.touched.categoriesId != null &&
+                            formik.touched.categoriesId &&
+                            formik.errors.categoriesId != null &&
                             formik.errors.categoriesId
                     )}
                     errorText={formik.errors.categoriesId}

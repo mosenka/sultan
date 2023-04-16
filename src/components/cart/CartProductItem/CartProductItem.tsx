@@ -14,7 +14,7 @@ import {
 } from '@/ui'
 import { ICartItem } from '@store/cart/CartSlice'
 
-import styles from 'components/cart/CartProductItem/cartproductitem.scss'
+import styles from './cartproductitem.scss'
 
 interface ICartProductItemProps {
     product: ICartItem

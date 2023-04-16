@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 import { OperatorImg, EColor, Text } from '@/ui'
-import styles from 'ui/RequestCall/requestcall.scss'
+import styles from './requestcall.scss'
 
 export const RequestCall: React.FC = () => {
     return (

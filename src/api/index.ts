@@ -1,6 +1,8 @@
 import { fetchCategories } from './CategoriesService'
 import { fetchMakers } from './MakersService'
 
-import { fetchProductsList } from 'api/ProductsListService'
+import { fetchProductsList } from './productList/ProductsListService'
 
-export { fetchProductsList, fetchCategories, fetchMakers }
+import { fetchProductById } from './product/ProductService'
+
+export { fetchProductsList, fetchCategories, fetchMakers, fetchProductById }

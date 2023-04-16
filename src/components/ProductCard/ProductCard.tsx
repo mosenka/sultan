@@ -34,7 +34,7 @@ export const ProductCard: React.FC<IProductItemProps> = ({
                     <Text size={16} weight={700} As={'p'}>
                         {makers.name}
                     </Text>
-                    <Link to={`/product/${id}`}>
+                    <Link to={`/product/${id}`} data-testid="product-link">
                         <Text size={16} weight={500}>
                             {name}
                         </Text>

@@ -21,13 +21,16 @@ export const Popup: React.FC<IPopupProps> = ({
     const ref = useRef<HTMLDivElement>(null)
 
     useEffect(() => {
-        if (!ref) return
+        // if (!ref) return
         if (!isOpen) return
+        if (ref.current == null || fadeRef.current == null) return
 
-        function handleClick(event: MouseEvent) {
+        function handleClick(event: MouseEvent): void {
             if (
                 event.target instanceof Node &&
-                !ref.current?.contains(event.target) &&
+                (ref.current?.contains(event.target) == null ||
+                    !ref.current?.contains(event.target)) &&
+                fadeRef.current?.contains(event.target) != null &&
                 fadeRef.current?.contains(event.target)
             ) {
                 closePopup()

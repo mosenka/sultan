@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import axios from 'axios'
+import axios, { AxiosError } from 'axios'
 
 import { IMaker } from '@/models/IMaker'
 
@@ -10,11 +10,16 @@ export const fetchMakers = createAsyncThunk<IMaker[]>(
             const response = await axios.get<IMaker[]>(
                 'http://localhost:3004/makers'
             )
+
             return response.data
-        } catch (error) {
-            return thunkAPI.rejectWithValue(
-                'Не удалось загрузить каталог товаров'
-            )
+        } catch (err) {
+            const errors = err as AxiosError
+            console.log(errors)
+            if (!errors.response) {
+                throw err
+            }
+
+            return thunkAPI.rejectWithValue('ошибка на сервере')
         }
     }
 )

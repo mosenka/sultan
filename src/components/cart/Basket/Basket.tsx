@@ -2,7 +2,7 @@ import * as React from 'react'
 import { Link } from 'react-router-dom'
 
 import { EColor, EIcons, Icon, Text } from '@/ui'
-import styles from 'components/cart/Basket/basket.scss'
+import styles from './basket.scss'
 
 interface IBasketProps {
     value: number
